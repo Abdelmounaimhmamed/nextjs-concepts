@@ -2,16 +2,31 @@
 import { useRouter } from "next/router";
 import {getFiltredEvents} from "./../../helpers/api-utils";
 import EventList from "../../components/EventsList";
+import { Fragment } from "react";
+import Head from "next/head";
 
 const FilteredEvent = ({filteredEvent, hasError}) => {
-    
+
+    const pageHeadData = (
+        <Head>
+                <title>FilteredEvent</title>
+                <meta name="description"  content="event for a special date  " />
+        </Head>
+    )
+
     if(hasError){
         return (
-            <h1 className="center">No event macthing the date sorry</h1>
+            <Fragment>
+                {pageHeadData}
+                <h1 className="center">No event macthing the date sorry</h1>
+            </Fragment>
         )
     }
     return (
-        <EventList events={filteredEvent} />
+        <Fragment>
+           {pageHeadData}
+            <EventList events={filteredEvent} />
+        </Fragment>
     )
 }
 export const getServerSideProps = async (context) => {

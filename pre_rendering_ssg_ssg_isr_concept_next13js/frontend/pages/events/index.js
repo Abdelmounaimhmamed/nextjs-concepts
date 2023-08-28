@@ -1,4 +1,4 @@
-
+import Head from "next/head";
 import EventList from "../../components/EventsList";
 import EventSearch from "../../components/Event-search";
 import { Fragment } from "react";
@@ -15,6 +15,10 @@ const Events = ({events}) => {
 
     return (
         <Fragment>
+            <Head>
+                <title>All events </title>
+                <meta name="description" content="All events" />
+            </Head>
                 <EventSearch  onSearch={findEventFiltered}/>
                 <EventList events={events}/>
         </Fragment>

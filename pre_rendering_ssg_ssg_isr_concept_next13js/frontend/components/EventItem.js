@@ -1,5 +1,6 @@
 import classes from "./Event-items.module.css";
 import Button from "./../ui/button";
+import Image from "next/image";
 
 const EventItem = ({title , image, date ,location , id}) => {
     const dateToDisplay = new Date(date).toLocaleDateString("en-US" , {day: "numeric" , month:"long", year:"numeric"});
@@ -7,7 +8,7 @@ const EventItem = ({title , image, date ,location , id}) => {
     const adress = location.replace(", ","\n");
     return (
         <li className={classes.item}> 
-            <img src={image} alt={"lost and toast"} />
+            <Image src={image} alt={"lost and toast"}  />
             <div className={classes.content}>
                 <div className={classes.summary}>
                     <h2>{title}</h2>

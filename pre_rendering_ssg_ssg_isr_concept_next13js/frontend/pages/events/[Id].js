@@ -6,6 +6,7 @@ import EventSummary from "../../components/event-details/event-summary"
 import EventLogistics from "../../components/event-details/event-logistics";
 import EventContent from "../../components/event-details/event-content";
 import { getAllEvents } from "../../Dummy-Data";
+import Head from "next/head";
 
 const EventDetail = ({event}) => {
     
@@ -16,6 +17,10 @@ const EventDetail = ({event}) => {
 
     return (
         <Fragment>
+             <Head>
+                <title>{event.title} event </title>
+                <meta name="description" content={`event for ${event.date}`} />
+            </Head>
             <EventSummary title={event.title}></EventSummary>
             <EventLogistics  date={event.date} address={event.location} image={event.image}/>
             <EventContent >
