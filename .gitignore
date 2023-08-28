@@ -1,0 +1,12 @@
+
+node_modules/
+
+.next/
+*node_modules/*
+
+*node_modules/*
+
+
+./next-doc.txt
+next-doc.txt
+
