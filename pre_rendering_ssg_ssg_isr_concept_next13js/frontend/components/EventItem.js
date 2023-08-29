@@ -23,7 +23,6 @@ const EventItem = ({title , image, date ,location , id}) => {
                     <Button link={exploreEvent} >Expolore event</Button>
                 </div>
             </div>
-
         </li>
     )
 }
